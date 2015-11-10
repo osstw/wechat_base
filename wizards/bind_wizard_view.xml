@@ -1,0 +1,27 @@
+<openerp>
+    <data>
+        <record id="bind_user_wizard_form" model="ir.ui.view">
+            <field name="name">bind_user_wizard.form</field>
+            <field name="model">wechat_base.bind_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--<div class="oe_right">-->
+                        <!--<button type="object" name="action_get_qrcode" string="get qrcode"/>-->
+                        <!--<button type="object" name="do_populate_tasks" string="Get All"/>-->
+                    <!--</div>-->
+                    <group>
+                        <!--<field name="wechat_qrcode_url"/>-->
+                        <field name="wechat_qrcode" widget="image"/>
+                    </group>
+                    <footer>
+                        <button special="cancel" string="Done"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!--More button Action-->
+        <act_window id="bind_wizard" name="Bind Weixin User Wizard"
+                    src_model="res.users" res_model="wechat_base.bind_wizard" view_mode="form" target="new"
+                    multi="False"/>
+    </data>
+</openerp>
